@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
 * main - needed
-* Return value 0
+*
+* Return: value 0
 */
 int main(void)
 {
