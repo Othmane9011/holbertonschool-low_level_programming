@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- *  main - Prints a-A / z-Z.
- *  
- *  Return: return value to 0
- */  
+ * main - Prints a-A / z-Z.
+ *
+ * Return: return value to 0
+ */
 int main(void)
 {
 	char c = 'a';
