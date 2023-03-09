@@ -1,32 +1,37 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - add two numbers
+ * main - adds positive numbers
  * Return: 0
  * @argc: amount of args
  * @argv: pointer to pointers array
  */
 int main(int argc, char *argv[])
 {
-	int n = 1, counter = argc;
+		int n = 0, counter = argc;
+
+		if (argc == 1)
+		{
+		printf("%d\n", 0);
+		return (0);
+		}
 
 		argv += 1;
 		counter--;
 		while (counter--)
 		{
-		n = n * _atoi(*argv);
-		argv += 1;
-		}
 
-		if (argc < 3)
+		if (only_nums(*argv) == 0)
 		{
 		printf("Error\n");
 		return (1);
 		}
+		n = n + _atoi(*argv);
+		argv += 1;
+		}
 		printf("%d\n", n);
 		return (0);
 }
-
 /**
  * _atoi - convert string to int
  * Return: the int
@@ -34,9 +39,9 @@ int main(int argc, char *argv[])
  */
 int _atoi(char *s)
 {
-	int size = 0, i, j, sign = 1;
+		int size = 0, i, j, sign = 1;
 
-	int number = 0;
+		int number = 0;
 
 		size = _strlen_recursion(s);
 
@@ -68,6 +73,27 @@ int _atoi(char *s)
 		return (number);
 }
 
+/**
+ * only_nums - checks for non-digit symbols
+ * @s: string
+ * Return: 1 if test passed 0 otherwise
+ */
+int only_nums(char *s)
+{
+		int c = 0;
+
+		while (*(s + c) != 0)
+		{
+		if (*(s + c) < 48 || *(s + c) > 57)
+		{
+		return (0);
+		}
+		c++;
+		}
+		if (c == 0)
+		return (0);
+		return (1);
+}
 /**
  * _strlen_recursion - return the length of a string
  * @s: string
