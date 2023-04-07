@@ -5,7 +5,7 @@
  ** add_node - function with two arguments
  * @head: double pointer to linked list
  * @str: string pointer
- *
+ * add_node: adding node
  * Description: adds a new node at the beginning
  * Return: address of new element
  */
