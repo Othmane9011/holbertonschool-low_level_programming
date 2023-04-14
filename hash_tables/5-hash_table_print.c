@@ -24,16 +24,15 @@ void hash_table_print(const hash_table_t *ht)
 		node = ht->array[i];
 
 		while (node)
-				{
-					if (pr_commas == 1)
-						printf(", ");
+		{
+		if (pr_commas == 1)
+		printf(", ");
+		pr_commas = 1;
+		printf("'%s': '%s'", (char *) node->key,
+		(char *) node->value);
 
-					pr_commas = 1;
-					printf("'%s': '%s'", (char *) node->key,
-							(char *) node->value);
-
-					node = node->next;
-				}
+		node = node->next;
+		}
 		}
 
 		printf("}\n");
